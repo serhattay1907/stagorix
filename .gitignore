@@ -229,8 +229,9 @@ pilot/**/public/
 .env
 data/
 
-# Personal Claude Code notes
-CLAUDE.local.md
+# Personal local notes and agent instruction files
+*.local.md
+CLAUDE.md
 
 # Local working files (inputs, renders)
 workspace/*
