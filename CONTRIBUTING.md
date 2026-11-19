@@ -1,4 +1,4 @@
-# Stagorix — instructions for Claude Code
+# Contributing to Stagorix
 
 Stagorix is an open-source, brand-agnostic, multi-agent pipeline that turns news and a user's own videos into branded, captioned vertical videos (YouTube Shorts, Instagram Reels). Read this file before any change; every proposal and code decision is checked against the principles below.
 
@@ -39,8 +39,7 @@ Stagorix is an open-source, brand-agnostic, multi-agent pipeline that turns news
 
 - Work in small, reviewable steps. After each step, report what changed and wait for the owner's go-ahead before starting the next.
 - The owner makes decisions. Present options with trade-offs and a recommendation; state assumptions explicitly.
-- Git workflow: Claude may create branches, commit and push without asking, then gives the owner a ready PR title and description. The owner opens the pull request on GitHub and merges it. Claude never opens PRs itself (its tooling appends attribution) and never pushes to `main`.
-- No AI tool attribution anywhere: no `Co-Authored-By` trailers, session links or "Generated with" lines in commits, PRs, docs or code. If a credit seems genuinely needed, ask the owner first.
+- Git workflow: work on a branch and open a pull request; only the owner merges into `main`. No direct pushes to `main`.
 - Deletion and any other irreversible action only with explicit approval.
 - Give honest critique; flag conflicts with the principles instead of working around them.
 - Every step names the expertise it needs (editor, brand, social media, sound, UI/UX, security, licensing, architecture …) and is decided the way that expert would decide. Decisions cite their basis: current sources, data or our own measurements, recorded in `docs/DECISIONS.md`.
@@ -84,5 +83,5 @@ Stagorix is an open-source, brand-agnostic, multi-agent pipeline that turns news
 - A command that is not built yet says so and exits with code 2; never a silent no-op.
 - `zod` is pinned to the exact version Remotion depends on; upgrade both together.
 - Media (raw videos, renders, cutouts, models) is never committed. Exceptions: the small golden-test files in `tests/golden/` (frames produced inside Docker, a synthetic speech sample).
-- Personal, local-only notes for a contributor go in `CLAUDE.local.md` (gitignored).
+- Personal, local-only notes go in a gitignored `*.local.md` file.
 - Third-party files are never vendored without a clear, compatible license. Project skills (our own) live in `.agents/skills/<name>/`.

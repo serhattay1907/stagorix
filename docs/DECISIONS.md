@@ -1,6 +1,6 @@
 # Decision log
 
-Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7, see `CLAUDE.md`). To reverse a decision, add a new entry that supersedes it.
+Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7, see `CONTRIBUTING.md`). To reverse a decision, add a new entry that supersedes it.
 
 | Date | Decision | Rationale | Principle |
 | --- | --- | --- | --- |
@@ -31,7 +31,7 @@ Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7,
 | 2026-10-30 | Interface language (CLI messages, panel, wizard) will be Turkish and English from the start of the panel (6.7), separate from content language; a new language is one translation file | Users choose the interface language independently of the language of their videos | P1, P3 |
 | 2026-10-30 | Transitions glitch (strong: channel split + slice displacement, seeded per frame), iris (medium, closes and reopens in the accent colour) and zoom blur (medium) | The three most used section changes in short-form edits beyond the whip; the iris carries the brand colour | P1, P2 |
 | 2026-10-30 | `stagorix showcase --footage <analysis folder>` plays the showcase over the user's own 9:16 cut and person cutout; the clip is copied to gitignored render/public/showcase-input/ | Effects are judged on real footage, not a stand-in; user video never leaves the machine | P3, P4 |
-| 2026-10-30 | Working mode: Claude writes, tests and renders the showcase; the owner watches, decides and runs the pre-merge steps; each PR ends with a short "what we learned" note | Faster loop with the owner still in control and learning the code | P3 |
+| 2026-10-30 | Working mode: each change is written, tested and rendered on a branch; the owner reviews, decides and runs the pre-merge steps; each PR ends with a short "what we learned" note | Faster loop with the owner still in control and learning the code | P3 |
 | 2026-10-30 | Milestones: MVP (own video → branded Short) → v1 (end of phase 8, option targets met, review gate) → Pro (end of phase 12) | The promised MVP stays near; richness grows in two measurable steps | P3 |
 | 2026-10-30 | Rich option catalog with v1 and Pro targets for every dimension (formats, hooks, looks, font pairs, caption styles, effects, layouts, sounds, music, voice, visual sources, duration, tempo, calls to action); see ROADMAP | Users and brands need a wide, professional range of choices, not only effects. Basis: published short-form format and hook research (see 5.8) | P1 |
 | 2026-10-30 | Choice is offered in three layers (one-click pack, guided wizard, expert mode) with a compatibility filter; nothing is locked: "show all" is always there and every choice can be undone | Balances richness against choice overload (Hick's law) without restricting the user | P3 |
@@ -67,7 +67,7 @@ Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7,
 | 2026-10-29 | Video is streamed through ffmpeg pipes, one frame in memory at a time | The pilot loaded all frames and passed 7 GB of RAM | P2 |
 | 2026-10-29 | Virtual camera: YuNet on 640 px frames every 0.1 s, gaps interpolated, two-way smoothing with a 0.5 s time constant; no face → centred crop and a visible warning | Smooth, frame-rate-independent motion; failure is shown, not hidden | P2, P3 |
 | 2026-10-29 | OpenCV 5 (`opencv-python-headless`), YuNet model from `opencv/face_detection_yunet` (MIT), baked into the image | Current API; tiny model, works offline | P2, P6 |
-| 2026-10-29 | The owner opens every pull request from a branch Claude pushed; Claude supplies the title and description (supersedes "Claude opens PRs") | PRs opened through Claude's tooling get an attribution footer that cannot be removed from there | — |
+| 2026-10-29 | The owner opens every pull request from a pushed branch; the branch comes with a ready title and description | Keeps PR authorship and wording under the owner's control | — |
 | 2026-10-29 | Whisper: `small` baked into the image; `medium` and `large-v3` downloaded on first use, announced with size and license | Keeps the image lean and the first run offline; larger models stay one flag away | P2, P3, P5 |
 | 2026-10-29 | Transcription language comes from the caller or is detected; never hard-coded (the pilot hard-coded Turkish) | Core is language-neutral | P1 |
 | 2026-10-29 | Every model is listed in `stagorix/models.py` with source repo and license; `stagorix models list` shows them | Licensing and visibility | P3, P6 |
@@ -88,8 +88,8 @@ Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7,
 | 2026-10-29 | Render: Remotion 4.0.539 in `render/`, `zod` pinned to Remotion's own version (4.5.4) | Mismatched zod versions break prop schemas | P2 |
 | 2026-10-29 | Unbuilt commands exit with code 2 and name their roadmap phase | Nothing fails silently | P3 |
 | 2026-10-28 | No AI tool attribution in commits, PRs, docs or code; any credit only with owner approval | Owner preference; authorship stays with the owner | — |
-| 2026-10-28 | Claude may branch, commit, push and open PRs freely; only the owner merges into `main`; no direct pushes to `main` | Keeps the real control point with the owner while removing per-commit friction | P3 |
-| 2026-10-28 | `CLAUDE.md` in English; personal Turkish working notes in gitignored `CLAUDE.local.md` | Contributors' Claude Code reads `CLAUDE.md`; it must not be tied to one person | P1, language rule |
+| 2026-10-28 | Work happens on branches; only the owner merges into `main`; no direct pushes to `main` | Keeps the real control point with the owner while removing per-commit friction | P3 |
+| 2026-10-28 | Contributor guide (`CONTRIBUTING.md`) in English; personal Turkish working notes in a gitignored local file | The guide must not be tied to one person | P1, language rule |
 | 2026-10-28 | `docs/ROADMAP.md` is the source of truth for progress; the plan doc links to it | Two copies drift apart | P3 |
 | 2026-10-28 | Name: **Stagorix** | "Shorts" belongs to YouTube and ties us to one platform; Stagora, Stagio, Theatron collided | P1 |
 | 2026-10-28 | Three core principles fixed | Brand-agnostic, cross-OS, user control | P1–P3 |
@@ -98,7 +98,7 @@ Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7,
 | 2026-10-28 | Mixed face/voice content; paid providers off by default | Owner preference | P5 |
 | 2026-10-28 | If Claude Motion ships, add it next to Remotion, not instead | Remotion gives automation and portability | P2, P7 |
 | 2026-10-28 | Yanny Studio not adopted; flub detection, style packs and style learning ideas taken | Mostly already planned; closed system | P7 |
-| 2026-10-28 | Official Remotion Claude skills + 4 project skills in the repo | Portable, ship with the repo | P2 |
+| 2026-10-28 | Official Remotion agent skills + 4 project skills in the repo | Portable, ship with the repo | P2 |
 | 2026-10-27 | Architecture v2: text work in cloud (optional), media in local Docker worker | Pilot: CPU person cutout and render too slow for anything else | P2, P5 |
 | 2026-10-27 | No separate editor; DaVinci export optional | Remotion is the editor; CapCut and DaVinci free are closed to automation | P2, P7 |
 | 2026-10-27 | Three.js for 3D, no Blender | Same engine, no extra install | P2 |

@@ -1,6 +1,6 @@
 # Roadmap
 
-Source of truth for progress. 12 phases after Phase 0. Owner tags: **(S)** = Serhat, **(C)** = Claude.
+Source of truth for progress. 12 phases after Phase 0. Tags: **(S)** = owner task (decision, approval, hardware test), **(C)** = code task.
 
 | Phase | Name | Status |
 | --- | --- | --- |
@@ -54,7 +54,7 @@ After the option review gate, requests stay open for good: each wish becomes a n
 - [x] 0.1 GitHub repo (C)
 - [x] 0.2 Docker installed and tested (C)
 - [x] 0.3 Git, Node, Python, uv (S)
-- [x] 0.4 Claude Code + token (S)
+- [x] 0.4 Dev tooling + token (S)
 - [x] 0.5 Notion connection + token (C, token S)
 - [x] 0.6 Drive `inbox` / `output` folders (C)
 - [x] 0.7 Repo connected to the session (C)
@@ -68,8 +68,8 @@ After the option review gate, requests stay open for good: each wish becomes a n
 ## Phase 2 — Cleanup and repo skeleton
 
 - [x] 2.1 Rename repo to `stagorix` (C)
-- [x] 2.2 Separate "Stagorix" Claude project with principles in its instructions (S)
-- [x] 2.3 `CLAUDE.md`, `README`, `docs/ARCHITECTURE`, `DECISIONS`, `ROADMAP` (C, push approval S)
+- [x] 2.2 Separate "Stagorix" workspace with the principles written down (S)
+- [x] 2.3 `CONTRIBUTING.md`, `README`, `docs/ARCHITECTURE`, `DECISIONS`, `ROADMAP` (C, push approval S)
 - [x] 2.4 Folder structure, `pyproject.toml`, `package.json`, CLI skeleton (C)
 - [x] 2.5 Docker `cpu` / `gpu` profiles, pinned versions, fonts and models in the image (C)
 - [x] 2.6 Golden test (`stagorix verify`) + CI (C)
