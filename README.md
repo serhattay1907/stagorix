@@ -4,6 +4,14 @@ Provider-agnostic, local-first multi-agent pipeline that turns news and your own
 
 > **Status:** early development (Phase 2 of 12). Not usable yet. See the [roadmap](docs/ROADMAP.md).
 
+<p align="center">
+  <img src="docs/media/showcase.gif" width="270" alt="Stagorix effect showcase animation">
+</p>
+
+![Frames from the Stagorix effect showcase: title behind speaker, number pop, line chart, quote bubbles, timeline, spotlight](docs/media/showcase-strip.jpg)
+
+<sub>Frames rendered by the pipeline itself: the 31-effect showcase that the Docker golden test checks on every pull request.</sub>
+
 - **Brand-agnostic core:** every brand, person or organization lives in its own `brands/<slug>/` profile.
 - **Runs everywhere:** same steps and same output on macOS, Windows and Linux (Docker, CPU by default, optional GPU).
 - **You stay in control:** every run, step and cost is visible, and nothing is published without your approval.
