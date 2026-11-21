@@ -81,7 +81,11 @@ def test_no_render_source_is_gitignored() -> None:
 
     import pytest
 
-    if shutil.which("git") is None or not (ROOT / ".git").exists():
+    probe = ["git", "rev-parse", "--is-inside-work-tree"]
+    inside = shutil.which("git") is not None and (
+        subprocess.run(probe, cwd=ROOT, capture_output=True).returncode == 0
+    )
+    if not inside:
         pytest.skip("needs a git checkout")
     out = subprocess.run(
         ["git", "ls-files", "--others", "--ignored", "--exclude-standard", "render/src", "stagorix", "tests"],

@@ -1,65 +1,22 @@
-# Stagorix
+# Stariance
 
-Provider-agnostic, local-first multi-agent pipeline that turns news and your own videos into branded, captioned vertical videos for YouTube Shorts and Instagram Reels (LangGraph + Whisper + Remotion).
+AI-powered growth studio for brands and creators: brand profile and packs, content production, publishing and measurement in one place.
 
-> **Status:** early development (Phase 2 of 12). Not usable yet. See the [roadmap](docs/ROADMAP.md).
-
-<p align="center">
-  <img src="docs/media/showcase.gif" width="270" alt="Stagorix effect showcase animation">
-</p>
-
-![Frames from the Stagorix effect showcase: title behind speaker, number pop, line chart, quote bubbles, timeline, spotlight](docs/media/showcase-strip.jpg)
-
-<sub>Frames rendered by the pipeline itself: the 31-effect showcase that the Docker golden test checks on every pull request.</sub>
-
-- **Brand-agnostic core:** every brand, person or organization lives in its own `brands/<slug>/` profile.
-- **Runs everywhere:** same steps and same output on macOS, Windows and Linux (Docker, CPU by default, optional GPU).
-- **You stay in control:** every run, step and cost is visible, and nothing is published without your approval.
-
-## Modes
-
-| Mode | You give | You get |
+| Part | Path | What it is |
 | --- | --- | --- |
-| News | Nothing — sources are scanned | Script + video |
-| `edit` | Raw talking-head footage | Cut, captioned video with effects |
-| `polish` | An edited video | Same video, branded and captioned |
-| `clip` | A long video | 3–5 short candidates |
+| Stagorix | [`packages/stagorix`](packages/stagorix) | Open-source video engine (MIT): analysis, edit plan, effects, render |
+| Stariance app | [`apps/stariance`](apps/stariance) | Brand wizard, pack recommendation, Insight, panel (from MVP phase E) |
+| Docs | [`docs`](docs) | One roadmap and one decision log for the whole repository |
 
-## Development
+> **Status:** early development. MVP target: 31 December 2026. See the [roadmap](docs/ROADMAP.md).
 
-**With Docker (recommended, same on macOS, Windows and Linux):**
-
-```bash
-docker compose up --build                                        # CPU (default)
-docker compose -f compose.yaml -f compose.gpu.yaml up --build    # NVIDIA GPU, Linux or Windows WSL2
-```
-
-**Without Docker:** Python 3.12, [uv](https://docs.astral.sh/uv/), Node.js 22 and ffmpeg.
+## Quick start (engine)
 
 ```bash
-uv sync
-uv run stagorix doctor
-uv run pytest
-cd render && npm ci && npm run typecheck
+cd packages/stagorix
+docker compose up --build        # or: uv sync && uv run stagorix doctor
 ```
-
-**Optional, for AI coding agents:** Remotion's official agent skills improve generated Remotion code. They are installed locally and never committed:
-
-```bash
-cd render && npx skills add remotion-dev/skills
-```
-
-## Docs
-
-- [Architecture](docs/ARCHITECTURE.md)
-- [Decisions](docs/DECISIONS.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Motion language](docs/MOTION.md)
-- [References](docs/REFERENCES.md)
-- [Contributing guide](CONTRIBUTING.md)
 
 ## License
 
-Stagorix is [MIT](LICENSE) licensed.
-
-It renders video with [Remotion](https://www.remotion.dev), which has its own license: free for individuals, non-profits and for-profit organizations with up to 3 employees; larger organizations need a [Remotion Company License](https://www.remotion.pro/license). Check it before using Stagorix in a larger company.
+[MIT](LICENSE). Stagorix renders with [Remotion](https://www.remotion.dev), which has its own license; see [`packages/stagorix/README.md`](packages/stagorix/README.md).

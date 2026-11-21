@@ -15,8 +15,23 @@ Source of truth for progress. 12 phases after Phase 0. Tags: **(S)** = owner tas
 | 8 | Upload your own video | ⬜ |
 | 9 | Publishing | ⬜ |
 | 10 | Automation | ⬜ |
-| 11 | First real week (Random Talks Academy) | ⬜ |
+| 11 | First real week (first pilot brand) | ⬜ |
 | 12 | Open source and CV | ⬜ |
+
+## Stariance MVP alignment (November 2026)
+
+Stagorix is the open-source video engine of **Stariance**, a growth studio for brands and creators. Both live in this monorepo: the engine in `packages/stagorix/`, the app layer in `apps/stariance/`. The Stariance MVP (target: 31 December 2026) reorders this roadmap as below. Phase numbers stay; this table decides what is built now.
+
+| MVP phase | Dates (est.) | Stagorix tasks | New work |
+| --- | --- | --- | --- |
+| A · Engine bridge | 23–29 Nov | 3.6 | `Edit` composition (edit plan + footage + cuts + captions → video); aspect ratio as a parameter |
+| B · Brand core | 30 Nov–6 Dec | 4.1, 4.3, 8.1 | Profile = personality → style → pack; looks become styles; rule-based edit v0 |
+| C · Brain + assembly | 7–13 Dec | 5.1, 5.5, 5.6, 6.1 | Multi-clip assembly (order, best take, audio/colour matching) |
+| D · Format range | 14–20 Dec | 8.2, 8.4 | 16:9 (three base layouts first), cover image, text outputs |
+| E · App layer | 21–27 Dec | 4.2, 6.2–6.4 | Move to the Stariance repository |
+| F · Quality and release | 28–31 Dec | 4.6, 8.5, 12.1 | First pack set, 12 format cards (5.8, narrowed) |
+
+Later: 3.5b, 4.4, phase 7, 9, 10, 11. Dropped from the MVP: news agents 5.2–5.4. Option targets below are under review: they move from counts to quality targets.
 
 ## Milestones
 
@@ -111,7 +126,7 @@ After the option review gate, requests stay open for good: each wish becomes a n
 - [ ] 4.4 Style card from reference videos (`extract-style`), moved before 4.2 (C), first references (S)
   - Measures cut tempo, speech rate, pauses, zoom frequency and strength, caption position/case/words per line, accent colour, closest bundled font; each value with a confidence, shown for approval and written as profile defaults
   - Reference videos are the user's own files and stay local (only measured parameters are stored); optional download (yt-dlp) is opt-in and at the user's own responsibility
-- [ ] 4.5 First profile: Random Talks Academy (S provides brand info, C sets it up)
+- [ ] 4.5 First profile: the first pilot brand (S provides brand info, C sets it up)
 - [ ] 4.6 Font pairs: 20 OFL pairs with Latin Extended support (C), selection (S)
 
 ## Phase 5 — Agents (LangGraph)
@@ -166,7 +181,7 @@ After the option review gate, requests stay open for good: each wish becomes a n
 - [ ] 10.2 Secrets (S)
 - [ ] 10.3 End-to-end test (S + C)
 
-## Phase 11 — First real week (Random Talks Academy)
+## Phase 11 — First real week (first pilot brand)
 
 - [ ] 11.1 Produce and publish 3 videos (S + C)
 - [ ] 11.2 Fix issues (C)

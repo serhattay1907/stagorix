@@ -78,7 +78,7 @@ Stagorix is an open-source, brand-agnostic, multi-agent pipeline that turns news
 
 - Python 3.12, typed, Pydantic models for every agent input/output.
 - TypeScript for Remotion; every effect/component has a Zod schema for its props.
-- Effects take colors, fonts, radius and motion from the theme (`useTheme()`, `render/src/theme/`), never as literals; text and timings (in seconds) come from props. New effects appear in the `Showcase` composition and get a role and intensity in `stagorix/render/motion.py` (see `docs/MOTION.md`).
+- Effects take colors, fonts, radius and motion from the theme (`useTheme()`, `packages/stagorix/render/src/theme/`), never as literals; text and timings (in seconds) come from props. New effects appear in the `Showcase` composition and get a role and intensity in `packages/stagorix/stagorix/render/motion.py` (see `docs/MOTION.md`).
 - Pin every dependency version (`uv.lock`, `package-lock.json`, Docker image digests).
 - A command that is not built yet says so and exits with code 2; never a silent no-op.
 - `zod` is pinned to the exact version Remotion depends on; upgrade both together.
