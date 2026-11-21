@@ -229,9 +229,8 @@ packages/stagorix/pilot/**/public/
 .env
 data/
 
-# Personal local notes and agent instruction files
+# Personal local notes (e.g. CLAUDE.local.md)
 *.local.md
-CLAUDE.md
 
 # Local working files (inputs, renders)
 packages/stagorix/workspace/*
