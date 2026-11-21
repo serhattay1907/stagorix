@@ -20,7 +20,7 @@ Source of truth for progress. 12 phases after Phase 0. Tags: **(S)** = owner tas
 
 ## Stariance MVP alignment (November 2026)
 
-Stagorix is the open-source video engine of **Stariance**, a growth studio for brands and creators built in a separate repository. The Stariance MVP (target: 31 December 2026) reorders this roadmap as below. Phase numbers stay; this table decides what is built now.
+Stagorix is the open-source video engine of **Stariance**, a growth studio for brands and creators. Both live in this monorepo: the engine in `packages/stagorix/`, the app layer in `apps/stariance/`. The Stariance MVP (target: 31 December 2026) reorders this roadmap as below. Phase numbers stay; this table decides what is built now.
 
 | MVP phase | Dates (est.) | Stagorix tasks | New work |
 | --- | --- | --- | --- |

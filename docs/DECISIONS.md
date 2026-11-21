@@ -4,7 +4,7 @@ Append-only. Newest first. Each entry names the principle(s) it serves (P1–P7,
 
 | Date | Decision | Rationale | Principle |
 | --- | --- | --- | --- |
-| 2026-11-21 | Stagorix is the open-source video engine of Stariance; the Stariance app layer (brand wizard, pack recommendation, Insight, panel) lives in a separate public repository | Clear roles: the engine stays reusable and MIT; the product evolves on its own | P1, P7 |
+| 2026-11-21 | Stagorix is the open-source video engine of Stariance; the Stariance app layer (brand wizard, pack recommendation, Insight, panel) lives in the same public monorepo (`apps/stariance/`), the engine in `packages/stagorix/` (MIT) | One repo for a solo MVP: engine and app change together in one PR, one CI, one issue list; the engine folder stays reusable and MIT | P1, P7 |
 | 2026-11-21 | MVP scope follows the "Stariance MVP alignment" table in `ROADMAP.md`; news mode is out of the MVP; 16:9 output is in | Focus on the user's own recordings; brands need both vertical and horizontal video | P1 |
 | 2026-11-21 | Brand profile model: personality (Aaker's five dimensions) → style → pack; the format (narrative structure) is chosen per video; a pack shapes how content looks, never what it says | Research-backed core with freedom of content; two choices instead of three | P1 |
 | 2026-11-21 | Library goals move from counts to quality: fewer, crafted effects, sounds and fonts | Premium feel, less noise, faster processing | P2 |

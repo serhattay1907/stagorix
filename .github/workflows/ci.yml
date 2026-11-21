@@ -22,18 +22,22 @@ jobs:
         with:
           version: "0.11.32"
       - run: uv sync --frozen
+        working-directory: packages/stagorix
       - run: uv run ruff check .
+        working-directory: packages/stagorix
       - run: uv run ruff format --check .
+        working-directory: packages/stagorix
       - run: uv run pytest
+        working-directory: packages/stagorix
       - uses: actions/setup-node@v7
         with:
-          node-version-file: .nvmrc
+          node-version-file: packages/stagorix/.nvmrc
           cache: npm
-          cache-dependency-path: render/package-lock.json
+          cache-dependency-path: packages/stagorix/render/package-lock.json
       - run: npm ci --no-audit --no-fund
-        working-directory: render
+        working-directory: packages/stagorix/render
       - run: npm run typecheck
-        working-directory: render
+        working-directory: packages/stagorix/render
 
   golden:
     name: Golden test (Docker, ${{ matrix.arch }})
@@ -51,12 +55,14 @@ jobs:
       - uses: actions/checkout@v7
       - name: Build image
         run: docker compose build
+        working-directory: packages/stagorix
       - name: Run golden test
         run: docker compose run --rm worker stagorix verify
+        working-directory: packages/stagorix
       - name: Upload rendered frames
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: golden-output-${{ matrix.arch }}
-          path: workspace/verify/
+          path: packages/stagorix/workspace/verify/
           retention-days: 14

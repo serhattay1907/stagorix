@@ -222,7 +222,7 @@ __marimo__/
 # Stagorix
 node_modules/
 out/
-pilot/**/public/
+packages/stagorix/pilot/**/public/
 *.mp4
 *.mov
 *.wav
@@ -234,15 +234,15 @@ data/
 CLAUDE.md
 
 # Local working files (inputs, renders)
-workspace/*
-!workspace/.gitkeep
+packages/stagorix/workspace/*
+!packages/stagorix/workspace/.gitkeep
 
 # Third-party agent skills, installed locally with `npx skills add remotion-dev/skills`
-.agents/skills/remotion*/
-.claude/skills/remotion*/
+packages/stagorix/.agents/skills/remotion*/
+packages/stagorix/.claude/skills/remotion*/
 
 # Local footage for the showcase (never committed)
-render/public/showcase-input/
+packages/stagorix/render/public/showcase-input/
 
 # Built sound library (`stagorix sounds build`; never committed)
-render/public/sounds/
+packages/stagorix/render/public/sounds/
